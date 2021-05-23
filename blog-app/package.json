@@ -1,6 +1,12 @@
 {
   "name": "blog-app",
   "version": "0.1.0",
+  "description": "My first React Blog web application",
+  "keywords": [
+    "blog",
+    "blogs"
+  ],
+  "author": "Arsalan Iravani",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
