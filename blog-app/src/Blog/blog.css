@@ -1,0 +1,48 @@
+h2 {
+	text-align: center;
+	font-size: xx-large;
+}
+
+.blog {
+	background-color: lightskyblue;
+	max-width: 400px;
+	height: 450px;
+
+	cursor: pointer;
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.blog p:not(.title) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow-wrap: break-word;
+	display: -webkit-box;
+	line-height: 1.3;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.blog *:not(img) {
+	margin: 20px;
+}
+
+.blog img {
+	width: 100%;
+	/* object-fit: cover; */
+	background-color: green;
+}
+
+.blog .title {
+	font-weight: bold;
+	font-size: 25px;
+	text-transform: capitalize;
+}
+
+.blog footer {
+	color: gray;
+}

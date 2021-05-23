@@ -1,0 +1,17 @@
+.blogs-flex-container {
+	/* background-color: cyan; */
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	row-gap: 50px;
+	column-gap: 50px;
+	gap: 50px;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 1000px) {
+	.blogs-flex-container {
+		flex-direction: column;
+	}
+}

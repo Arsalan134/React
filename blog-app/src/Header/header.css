@@ -1,0 +1,57 @@
+header {
+	position: sticky;
+	background-color: aquamarine;
+	height: 100px;
+	top: 0; /*Needed to make header sticky to the top*/
+	text-align: center;
+}
+
+header .flex-container {
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: yellow;
+	padding-left: 50px;
+	padding-right: 50px;
+	align-items: center;
+	height: 70%;
+}
+
+header .leading {
+	background-color: red;
+	flex-grow: 1;
+}
+
+header .middle {
+	background-color: green;
+	flex-grow: 5;
+}
+
+header .trailing {
+	background-color: tomato;
+	flex-grow: 1;
+}
+
+/* header .trailing > * {
+	margin: 50px;
+} */
+
+header a {
+	/* Center Vertically */
+	/* top: 50%; */
+	/* margin-left: 40px; */
+	/* transform: translateY(-50%); */
+	text-decoration: none;
+	background-color: brown;
+}
+
+/* Change the color of links on hover */
+header a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+header a.active {
+	background-color: #4caf50;
+	color: white;
+}
