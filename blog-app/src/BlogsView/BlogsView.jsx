@@ -8,7 +8,7 @@ export const BlogsView = () => {
 	const [blogs, setBlogs] = useState([]);
 	// Valid options for source are 'server', 'cache', or
 	// 'default'. See https://firebase.google.com/docs/reference/js/firebase.firestore.GetOptions
-	// for more information.
+	// for more information....
 
 	function getBlogs() {
 		var getOptions = {
