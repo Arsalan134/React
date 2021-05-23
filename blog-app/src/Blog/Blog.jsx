@@ -8,7 +8,10 @@ export const Blog = ({ blog }) => {
 			<img src="/a.jpg" alt="Girl in a jacket" />
 			<h3 className="title">{blog.title}</h3>
 			<p className="description">{blog.description}</p>
-			<footer>4 mins ago</footer>
+			<footer>
+				<span>{blog.author}</span>
+				<span>4 mins ago</span>
+			</footer>
 		</div>
 		// </a>
 	);
