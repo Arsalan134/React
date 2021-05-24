@@ -11,10 +11,6 @@ export const BlogsView = () => {
 	// for more information....
 
 	function getBlogs() {
-		var getOptions = {
-			source: "cache",
-		};
-
 		blogsReference.onSnapshot((querySnapshot) => {
 			const blogs = [];
 			querySnapshot.forEach((doc) => {
@@ -23,7 +19,6 @@ export const BlogsView = () => {
 				blogs.push(doc.data());
 			});
 			setBlogs(blogs);
-			console.log("got blogs");
 		});
 	}
 
@@ -33,7 +28,6 @@ export const BlogsView = () => {
 
 	return (
 		<div className="blogs">
-			<p> count is {blogs.length} </p>
 			<h2>Blogs</h2>
 			<br />
 			<div className="blogs-flex-container">
