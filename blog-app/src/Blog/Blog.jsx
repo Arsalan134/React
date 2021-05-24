@@ -3,7 +3,6 @@ import "./blog.css";
 
 export const Blog = ({ blog }) => {
 	return (
-		// <a href="#">
 		<div className="blog">
 			<img src="/a.jpg" alt="Girl in a jacket" />
 			<h3 className="title">{blog.title}</h3>
@@ -13,6 +12,5 @@ export const Blog = ({ blog }) => {
 				<span>4 mins ago</span>
 			</footer>
 		</div>
-		// </a>
 	);
 };

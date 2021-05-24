@@ -1,8 +1,3 @@
-.blog h3 {
-	/* text-align: center; */
-	/* font-size: xx-large; */
-}
-
 .blog {
 	background-color: lightskyblue;
 	max-width: 400px;
@@ -14,7 +9,6 @@
 
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 }
 
 .blog *:not(img, footer) {
@@ -24,12 +18,10 @@
 
 .blog img {
 	width: 100%;
-	/* object-fit: cover; */
-	/* background-color: black; */
 }
 
 .blog .title {
-	/* background-color: green; */
+	color: black;
 
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -47,6 +39,8 @@
 }
 
 .blog p {
+	color: black;
+
 	overflow: hidden;
 	text-overflow: ellipsis;
 	overflow-wrap: break-word;
@@ -58,11 +52,8 @@
 
 .blog footer {
 	color: gray;
-	/* background-color: red; */
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	/* align-items: center; */
-	/* column-gap: 50px; */
 	margin-bottom: 10px;
 }

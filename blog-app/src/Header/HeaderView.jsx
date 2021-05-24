@@ -2,6 +2,7 @@ import "./header.css";
 import CustomButton from "../Custom UI Elements/Button/CustomButton";
 import firebase from "../firebase";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const HeaderView = () => {
 	const [signedIn, setSignedIn] = useState(false);
@@ -22,22 +23,21 @@ export const HeaderView = () => {
 			.signInWithPopup(provider)
 			.then((result) => {
 				/** @type {firebase.auth.OAuthCredential} */
-				var credential = result.credential;
-
+				// var credential = result.credential;
 				// This gives you a Google Access Token. You can use it to access the Google API.
-				var token = credential.accessToken;
-				// The signed-in user info.
-				var user = result.user;
+				// var token = credential.accessToken;
+				// // The signed-in user info.
+				// var user = result.user;
 				// ...
 			})
 			.catch((error) => {
 				// Handle Errors here.
-				var errorCode = error.code;
-				var errorMessage = error.message;
-				// The email of the user's account used.
-				var email = error.email;
-				// The firebase.auth.AuthCredential type that was used.
-				var credential = error.credential;
+				// var errorCode = error.code;
+				// var errorMessage = error.message;
+				// // The email of the user's account used.
+				// var email = error.email;
+				// // The firebase.auth.AuthCredential type that was used.
+				// var credential = error.credential;
 				// ...
 			});
 	}
@@ -61,9 +61,9 @@ export const HeaderView = () => {
 					<p>Leading</p>
 				</div>
 				<div className="middle">
-					<button>Home</button>
-					<button>About</button>
-					<button>Contact</button>
+					<Link to="/">Home</Link>
+					<Link to="/about">About</Link>
+					<Link to="/contact">Contact</Link>
 				</div>
 				<CustomButton
 					title={signedIn ? "Log out" : "Sign in"}

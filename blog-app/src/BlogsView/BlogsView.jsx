@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Blog } from "../Blog/Blog";
 import "./blogsView.css";
 import firebase from "../firebase";
+import { Link } from "react-router-dom";
 
 export const BlogsView = () => {
 	var blogsReference = firebase.firestore().collection("blogs");
@@ -14,9 +15,9 @@ export const BlogsView = () => {
 		blogsReference.onSnapshot((querySnapshot) => {
 			const blogs = [];
 			querySnapshot.forEach((doc) => {
-				// doc.data() is never undefined for query doc snapshots
-				console.log(doc.id, " => ", doc.data());
-				blogs.push(doc.data());
+				const blog = doc.data();
+				blog.id = doc.id;
+				blogs.push(blog);
 			});
 			setBlogs(blogs);
 		});
@@ -24,15 +25,21 @@ export const BlogsView = () => {
 
 	useEffect(() => {
 		getBlogs();
-	}, []);
+	});
 
 	return (
 		<div className="blogs">
 			<h2>Blogs</h2>
-			<br />
+
 			<div className="blogs-flex-container">
 				{blogs.map((blog) => (
-					<Blog key={blog._id} blog={blog} />
+					<Link
+						key={blog.id}
+						to={`/blogs/${blog.id}`}
+						style={{ textDecoration: "none" }}
+					>
+						<Blog blog={blog} />
+					</Link>
 				))}
 			</div>
 		</div>
