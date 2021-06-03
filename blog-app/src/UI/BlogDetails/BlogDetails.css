@@ -1,3 +1,8 @@
-img {
+.blogDetails img {
 	width: 100%;
+}
+
+.blogDetails h1,
+.blogDetails p {
+	text-align: center;
 }

@@ -62,7 +62,7 @@ export const HeaderView = () => {
 				</div>
 				<div className="middle">
 					<Link to="/">Home</Link>
-					<Link to="/create">New Blog</Link>
+					{signedIn ? <Link to="/create">New Blog</Link> : <></>}
 				</div>
 				<CustomButton
 					title={signedIn ? "Log out" : "Sign in"}

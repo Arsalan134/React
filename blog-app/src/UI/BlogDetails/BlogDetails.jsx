@@ -35,7 +35,7 @@ const BlogDetails = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="blogDetails">
 			<img src="/a.jpg" alt="Girl in a jacket" />
 			<h1>{blog.title}</h1>
 			<p>{blog.description}</p>
