@@ -1,6 +1,6 @@
 import "./header.css";
 import CustomButton from "../Custom UI Elements/Button/CustomButton";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -58,12 +58,11 @@ export const HeaderView = () => {
 		<header>
 			<div className="flex-container">
 				<div className="leading">
-					<p>Leading</p>
+					<h1>The Arsalan Blog</h1>
 				</div>
 				<div className="middle">
 					<Link to="/">Home</Link>
-					<Link to="/about">About</Link>
-					<Link to="/contact">Contact</Link>
+					<Link to="/create">New Blog</Link>
 				</div>
 				<CustomButton
 					title={signedIn ? "Log out" : "Sign in"}

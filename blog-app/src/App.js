@@ -1,8 +1,10 @@
-import { BlogsView } from "./BlogsView/BlogsView";
-import { HeaderView } from "./Header/HeaderView";
+import { BlogsView } from "./UI/BlogsView/BlogsView";
+import { HeaderView } from "./UI/Header/HeaderView";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import BlogDetails from "./BlogDetails/BlogDetails";
+import BlogDetails from "./UI/BlogDetails/BlogDetails";
+import NotFound from "./UI/NotFound";
+import NewBlog from "./UI/New BLog/NewBlog";
 
 const App = () => {
 	return (
@@ -15,11 +17,14 @@ const App = () => {
 						<Route exact path="/">
 							<BlogsView />
 						</Route>
+						<Route path="/create">
+							<NewBlog />
+						</Route>
 						<Route path="/blogs/:id">
 							<BlogDetails />
 						</Route>
-						<Route path="">
-							<BlogsView />
+						<Route path="*">
+							<NotFound />
 						</Route>
 					</Switch>
 				</React.Fragment>
