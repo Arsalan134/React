@@ -1,6 +1,8 @@
 import React from "react";
 import "./blog.css";
 
+import moment from "moment";
+
 export const Blog = ({ blog }) => {
 	return (
 		<div className="blog">
@@ -9,7 +11,7 @@ export const Blog = ({ blog }) => {
 			<p className="description">{blog.description}</p>
 			<footer>
 				<span>{blog.author}</span>
-				<span>4 mins ago</span>
+				<span>{moment().to(new Date(blog.createdAt.seconds * 1000))}</span>
 			</footer>
 		</div>
 	);

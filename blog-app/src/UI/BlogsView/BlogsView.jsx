@@ -3,7 +3,6 @@ import { Blog } from "../Blog/Blog";
 import "./blogsView.css";
 import firebase from "../../firebase";
 import { Link } from "react-router-dom";
-import BlogModel from "../BlogModel/BlogModel";
 
 export const BlogsView = () => {
 	var blogsReference = firebase.firestore().collection("blogs");
@@ -26,7 +25,7 @@ export const BlogsView = () => {
 
 	useEffect(() => {
 		getBlogs();
-	}, [blogs]);
+	}, []);
 
 	return (
 		<div className="blogs">
