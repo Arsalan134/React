@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import firebase from "../../firebase";
+import "./NewBlog.css";
 
 const NewBlog = () => {
 	const [title, setTitle] = useState("");
 	const [body, setBody] = useState("");
-	const [author, setAuthor] = useState("mario");
+	const [description, setDescription] = useState("");
+	// const [author, setAuthor] = useState("mario");
 	const [isPending, setIsPending] = useState(false);
+
 	const history = useHistory();
 
 	const handleSubmit = (e) => {
@@ -25,7 +28,7 @@ const NewBlog = () => {
 			.add({
 				title,
 				body,
-				description: "test description",
+				description,
 				author: user.displayName,
 				createdAt: new Date(),
 			})
@@ -52,6 +55,14 @@ const NewBlog = () => {
 					onChange={(e) => setTitle(e.target.value)}
 				/>
 
+				<label htmlFor="">Blog Description</label>
+				<input
+					type="text"
+					required
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+
 				<label htmlFor="">Blog Body</label>
 				<textarea
 					name=""
@@ -63,7 +74,7 @@ const NewBlog = () => {
 					onChange={(e) => setBody(e.target.value)}
 				></textarea>
 
-				<label htmlFor="">Blog Author</label>
+				{/* <label htmlFor="">Blog Author</label>
 				<select
 					name=""
 					id=""
@@ -71,11 +82,10 @@ const NewBlog = () => {
 					onChange={(e) => setAuthor(e.target.value)}
 				>
 					<option value="mario">mario</option>
-					<option value="xuy">xuy</option>
-				</select>
+				</select> */}
 
-				{!isPending && <button>Add blog</button>}
-				{isPending && <button>Adding Blog...</button>}
+				{!isPending && <input type="submit" value="Add Blog" />}
+				{isPending && <input type="submit" value="Adding Blog..." />}
 			</form>
 		</div>
 	);
